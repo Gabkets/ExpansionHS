@@ -1,0 +1,25 @@
+.l-main-nav{
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  max-width: 600px;
+  margin: 0 auto;
+  flex-direction: column;
+  padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .l-main-nav{
+    flex-direction: row;
+  }
+}
+
+.l-main-nav .btn{
+  width: 180px;
+  display: block;
+  margin: 10px auto;
+}
+
+@media screen and (min-width: 768px) {
+  margin: 10px;
+}

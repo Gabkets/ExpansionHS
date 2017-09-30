@@ -1,0 +1,18 @@
+.l-cards-list{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.l-card {
+  width: 50%;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .l-card {
+    width: 33.3333%
+  }
+}
+.l-card img{
+  max-width: 100%;
+  transform: scale(1.3);
+}
