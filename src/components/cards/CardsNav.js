@@ -7,21 +7,49 @@ import { selectClassCards } from "../../actions.js";
 class CardsNav extends React.Component {
   constructor(props){
     super(props);
+
+    this.state = {
+      menuOpen : false
+    }
   }
   componentDidMount() {
     this.props.fetchHClass();
   }
   selectClass = (hclassKey) => {
-    console.log(hclassKey);
     this.props.fetchClassCards(hclassKey);
+  }
+  openMenu = (menuOpen) => {
+    var menuNewState = menuOpen;
+
+    if(menuNewState === this.state.menuOpen){
+      this.setState({
+          menuOpen : !this.state.menuOpen
+      });
+    }
   }
   render () {
     return(
       <div className="l-cards-navegation">
-        <ul className="l-cards-navegation-list">
-          {this.props.hclasses.map((hclass, index) => {
+        <button
+          onClick={() => this.openMenu(this.state.menuOpen)}
+          className={this.state.menuOpen ?
+            'l-cards-navegation-menubutton active' :
+            'l-cards-navegation-menubutton'}
+        >
+          Filtrar por clase
+        </button>
+        <ul
+          className={this.state.menuOpen ?
+            'l-cards-navegation-list active' :
+            'l-cards-navegation-list'}
+        >{this.props.hclasses.map((hclass, index) => {
             return(
-                <li onClick={() => this.selectClass(hclass.key)} className="l-cards-navegation-list-item" key={index} data-class={hclass.key}>
+                <li
+                  onClick={() => this.selectClass(hclass.key)}
+                  className="l-cards-navegation-list-item"
+                  key={index}
+                  data-class={hclass.key}
+                >
                   <span><img src={hclass.icon.src} /></span>
                   <span className="l-cards-navegation-list-item-name">{hclass.name} </span>
                 </li>

@@ -41,7 +41,7 @@ class CardsList extends React.Component {
     };
 
     return(
-      <div>
+      <div className="c-cardsList">
         <Slider {...settings}>
           {this.props.cards.map((card, index) => {
             return(
