@@ -23,3 +23,7 @@
 @media screen and (min-width: 768px) {
   margin: 10px;
 }
+
+.c-logo-image{
+  max-width: 100%;
+}

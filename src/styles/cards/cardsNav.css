@@ -1,0 +1,33 @@
+@import '../fonts/belwe_bd_btbold.css';
+
+.l-cards-navegation-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+}
+.l-cards-navegation-list img{
+  width: 80px;
+}
+.l-cards-navegation-list-item{
+  list-style: none;
+  margin: 0 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.l-cards-navegation-list-item-name{
+  visibility: hidden;
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'belwe_bd_btbold';
+  padding: 5px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.l-cards-navegation-list-item:hover .l-cards-navegation-list-item-name{
+  visibility: visible;
+}
